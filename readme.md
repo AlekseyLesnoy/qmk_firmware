@@ -3,14 +3,14 @@
 - Install Dev env. https://docs.qmk.fm/#/newbs_getting_started
 - Run QMK MSYS 
 - Set config manually or update ini file: `C:\Users\...\AppData\Local\QMK.EXE\qmk.exe\qmk.exe.ini`:
-    + qmk config user.qmk_home = C:/Projects/_Playground/qmk_firmware
-    + qmk config user.keyboard=meletrix/zoom65_lite
-    + qmk config user.keymap = cloudsinmycoffee
+    + `qmk config user.qmk_home = C:/Projects/_Playground/qmk_firmware`
+    + `qmk config user.keyboard=meletrix/zoom65_lite`
+    + `qmk config user.keymap = cloudsinmycoffee`
 - Update config under keyboard's folder or 
 - Update exported keymap via `qmk json2c {path_to_json_keymap}`
 - Compile using `qmk compile` or `util/docker_build.sh <keyboard>:<keymap>`
 - Check generated file `...\qmk_firmware\meletrix_zoom65_lite_cloudsinmycoffee.hex` and set keyboard in DFU state by unpluging keyboard, hold down Esc and plug in your keyboard (it will stop working)
-- Run `qmk flash` or r `util/docker_build.sh <keyboard>:<keymap>:flash`
+- Run `qmk flash` or `util/docker_build.sh <keyboard>:<keymap>:flash`
 - Enjoy
 
 ## Other Notes:
