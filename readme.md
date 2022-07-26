@@ -1,3 +1,27 @@
+# My Notes
+- Export layout from https://config.qmk.fm/#/meletrix/zoom65_lite/LAYOUT_all
+- Install Dev env. https://docs.qmk.fm/#/newbs_getting_started
+- Run QMK MSYS 
+- Set config manually or update ini file: `C:\Users\...\AppData\Local\QMK.EXE\qmk.exe\qmk.exe.ini`:
+    + qmk config user.qmk_home = C:/Projects/_Playground/qmk_firmware
+    + qmk config user.keyboard=meletrix/zoom65_lite
+    + qmk config user.keymap = cloudsinmycoffee
+- Update config under keyboard's folder or 
+- Update exported keymap via `qmk json2c {path_to_json_keymap}`
+- Compile using `qmk compile` or `util/docker_build.sh <keyboard>:<keymap>`
+- Check generated file `...\qmk_firmware\meletrix_zoom65_lite_cloudsinmycoffee.hex` and set keyboard in DFU state by unpluging keyboard, hold down Esc and plug in your keyboard (it will stop working)
+- Run `qmk flash` or r `util/docker_build.sh <keyboard>:<keymap>:flash`
+- Enjoy
+
+## Other Notes:
+- git clone with recursive sub-modules: `git clone --recurse-submodules https://github.com/alekseylesnoy/qmk_firmware.git`
+- How to flash a board without taking out the PCB: https://docs.google.com/document/d/1WNpflqKHjuuKW0LrzAFXgna1ZIhd8ayAJEjm9g_49DU/edit (https://discord.com/channels/709692387160752189/924280469330231318/931286439310811167)
+
+
+
+
+
+
 # Quantum Mechanical Keyboard Firmware
 
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
