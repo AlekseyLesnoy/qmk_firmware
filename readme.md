@@ -1,4 +1,5 @@
 # My Notes
+## Initial Setup
 - Export layout from https://config.qmk.fm/#/meletrix/zoom65_lite/LAYOUT_all
 - Install Dev env. https://docs.qmk.fm/#/newbs_getting_started
 - Run QMK MSYS 
@@ -7,7 +8,7 @@
     + `qmk config user.keyboard=meletrix/zoom65_lite`
     + `qmk config user.keymap = cloudsinmycoffee`
 - Update config under keyboard's folder or 
-- Update exported keymap via `qmk json2c {path_to_json_keymap}`
+- Update exported keymap via `qmk json2c -o {output_file} {path_to_json_keymap}`
 - Compile using `qmk compile` or `util/docker_build.sh <keyboard>:<keymap>`
 - Check generated file `...\qmk_firmware\meletrix_zoom65_lite_cloudsinmycoffee.hex` and set keyboard in DFU state by unpluging keyboard, hold down Esc and plug in your keyboard (it will stop working)
 - Run `qmk flash` or `util/docker_build.sh <keyboard>:<keymap>:flash`
@@ -15,11 +16,17 @@
 
 ## Other Notes:
 - git clone with recursive sub-modules: `git clone --recurse-submodules https://github.com/alekseylesnoy/qmk_firmware.git`
-- How to flash a board without taking out the PCB: https://docs.google.com/document/d/1WNpflqKHjuuKW0LrzAFXgna1ZIhd8ayAJEjm9g_49DU/edit (https://discord.com/channels/709692387160752189/924280469330231318/931286439310811167)
+- How to flash a board without taking out the PCB: https://docs.google.com/document/d/1WNpflqKHjuuKW0LrzAFXgna1ZIhd8ayAJEjm9g_49DU/edit (https://discord.com/channels/709692387160752189/924280469330231318/931286439310811167) original firmware is at `...\qmk_firmware\keyboards\meletrix\zoom65_lite\keymaps\cloudsinmycoffee\backup_original_firmware\meletrix_zoom65_v2.hex`
 
 
-
-
+## Update layout (as of now should be possible to update using VIA)
+- Export layout from https://config.qmk.fm/#/meletrix/zoom65_lite/LAYOUT_all (import previous layout from `..\qmk_firmware\keyboards\meletrix\zoom65_lite\keymaps\cloudsinmycoffee\OnlineQMKConfiguratorExport\ meletrix-zoom65_lite-layout_all_mine.json`)
+- Update exported keymap via `qmk json2c -o {output_file} {path_to_json_keymap}` (save as `...\qmk_firmware\keyboards\meletrix\zoom65_lite\keymaps\cloudsinmycoffee\keymap.c`)
+- Update `keymap[][]` section in `...\qmk_firmware\keyboards\meletrix\zoom65_lite\keymaps\cloudsinmycoffee\keymap.c` (update just changed layouts)
+- Compile using `qmk compile` or `util/docker_build.sh <keyboard>:<keymap>`
+- Check generated file `...\qmk_firmware\meletrix_zoom65_lite_cloudsinmycoffee.hex` and set keyboard in DFU state by unpluging keyboard, hold down Esc and plug in your keyboard (it will stop working)
+- Run `qmk flash` or `util/docker_build.sh <keyboard>:<keymap>:flash`
+- Enjoy
 
 
 # Quantum Mechanical Keyboard Firmware
